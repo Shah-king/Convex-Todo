@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Typography, Button, Input, FormControl } from "@mui/material";
+
 type ToDoFormProps = {
     onCreate: (title: string, description: string) => void;
 }
@@ -14,11 +16,11 @@ export function NewToDoform({onCreate }: ToDoFormProps){
       };
     return(
         <form onSubmit={handleSubmit}>
-      <label htmlFor="title">Title</label>
-      <input type="text" name="title" id="title" value={title} onChange={e => setTitle(e.target.value)} />
-      <label htmlFor="description">Decsription</label>
-      <input type="text" name="description" id="description" value={description} onChange={e => setDescription(e.target.value)}  />
-      <button type="submit">Create</button>
+      <Typography>Title</Typography>
+      <Input type="text" name="title" id="title" value={title} onChange={e => setTitle(e.target.value)} />
+      <Typography>Description</Typography>
+      <Input type="text" name="description" id="description" value={description} onChange={e => setDescription(e.target.value)}  />
+      <Button type="submit">Create</Button>
     </form>
     )
 }
